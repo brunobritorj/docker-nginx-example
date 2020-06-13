@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+    webserver1:
+        build:
+            context: ./webserver1
+        container_name: webserver1
+    webserver2:
+        build:
+            context: ./webserver2
+        container_name: webserver2
+    load-balancer:
+        build:
+            context: ./load-balancer
+        container_name: load-balancer
+        ports:
+            - "800:80"
